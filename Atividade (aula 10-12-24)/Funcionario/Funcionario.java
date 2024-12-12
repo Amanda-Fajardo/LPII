@@ -1,37 +1,38 @@
 package Funcionario;
 
-// import Calculo.Calculo.calcularSalario;
-
 public class Funcionario {
     String nome, cpf, rg, dataContratacao;
     private double salario;
     private double salarioBase;
-    private int horasTrbalhadas;
-    private static int matricula = 0;
+    private int horasTrabalhadas;
+    private int matricula;
+    private static int contadorMatricula = 0;
 
     Calculo calculo = new Calculo();
 
-    public Funcionario(String nome, String cpf, String rg, String dataContratacao) {
+    public Funcionario(String nome, String cpf, String rg, String dataContratacao, int horasTrabalhadas, double salarioBase) {
         this.nome = nome;
         this.cpf = cpf;
         this.rg = rg;
         this.dataContratacao = dataContratacao;
+        gerarMatricula();
+        setHorasTrabalhadas(horasTrabalhadas);
+        this.horasTrabalhadas = getHorasTrabalhadas();
+        setSalarioBase(salarioBase);
+        this.salarioBase = getSalarioBase();
     }
 
-    private static void gerarMatricula() {
-        matricula++;
+    private void gerarMatricula() {
+        contadorMatricula++;
+        this.matricula = contadorMatricula;
     }
 
     public void setHorasTrabalhadas(int horasTrabalhadas) {
-        this.horasTrbalhadas = horasTrabalhadas;
+        this.horasTrabalhadas = horasTrabalhadas;
     }
 
     public int getHorasTrabalhadas() {
-        return horasTrbalhadas;
-    }
-
-    public void setMatricula(int matricula) {
-        this.matricula = matricula;
+        return horasTrabalhadas;
     }
 
     public int getMatricula() {
@@ -46,19 +47,20 @@ public class Funcionario {
         return salarioBase;
     }
 
-    public void setSalario() {
-        calculo.calcularSalario(salarioBase, horasTrbalhadas);
-        salario = calculo.getTotalSalario();
+    public void calcularSalario() {
+        calculo.calcularSalario(salarioBase, horasTrabalhadas);
+        this.salario = calculo.getSalarioTotal();
     }
 
-public void imprimirDados() {
-    System.out.println(this.nome);
-    System.out.println(this.cpf);
-    System.out.println(this.rg);
-    System.out.println(this.dataContratacao);
-    System.out.println(this.horasTrbalhadas);
-    System.out.println(this.salario);
-    System.out.println(this.salarioBase);
-    System.out.println(this.matricula);
-}
+    public void imprimirDados() {
+        System.out.println("Nome: " + this.nome);
+        System.out.println("CPF: " + this.cpf);
+        System.out.println("RG: " + this.rg);
+        System.out.println("Data da contratação: " + this.dataContratacao);
+        System.out.println("Horas trabalhadas: " + this.horasTrabalhadas);
+        System.out.println("Salário total: " + this.salario);
+        System.out.println("Salário base: " + this.salarioBase);
+        System.out.println("Número de matrícula: " + this.matricula);
+        System.out.println("----------------------------------");
+    }
 }
