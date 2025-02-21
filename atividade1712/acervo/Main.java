@@ -1,4 +1,4 @@
-package aula1712.acervo;
+package atividade1712.acervo;
 
 public static void main(String[] args){
     Publicacao livro = new Livro ("Quarta Asa", "Rebecca Yarros", "Fantasia", "Planeta Minotauro", 2023, 15, "Edição de luxo", "174VX")

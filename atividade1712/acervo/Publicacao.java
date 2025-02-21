@@ -1,4 +1,4 @@
-package aula1712.acervo;
+package atividade1712.acervo;
 
 public class Publicacao{
     //atributos

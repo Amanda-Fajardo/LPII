@@ -1,10 +1,11 @@
-package aula1712.acervo;
+package atividade1712.acervo;
+
 public class Filme extends Publicacao{
     private String diretor, atorPrincipal, sinopse, tempoDuracao;
     
     public Filme(String titulo, String autor, String genero, String editora, int anoPublicacao, int quantDisponivel, 
     String diretor, String atorPrincipal, String sinopse, String tempoDuracao){
-        super(String titulo, String autor, String genero, String editora, int anoPublicacao, int quantDisponivel,);
+        super(String titulo, String autor, String genero, String editora, int anoPublicacao, int quantDisponivel);
         this.diretor = this.diretor;
         this.atorPrincipal = atorPrincipal;
         this.sinopse = sinopse;
